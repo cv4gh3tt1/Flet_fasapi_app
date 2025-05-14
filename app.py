@@ -1,11 +1,9 @@
-from fastapi import FastAPI
-
-from database import CARS
-
-
-app = FastAPI()
+import flet as ft
+import flet_fastapi
 
 
-@app.get("/cars")
-def get_cars():
-    return CARS
+async def main(page: ft.Page):
+    await page.add_async(ft.Text("Olá, Flet!"))
+
+
+app = flet_fastapi.app(main)
